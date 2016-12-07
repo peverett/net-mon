@@ -16,7 +16,7 @@ Raspberry Pi (Model B+) with some simple scripts to capture net work logs
   accurate.
 
 ### Software setup
-1. Before you begin, make a note of the Pi's IP address in order to connect
+* Before you begin, make a note of the Pi's IP address in order to connect
    via SSH later, `$ ifconfig eth0`. 
 * Enable the SSH server on the Pi:
     1. On the command line `$ sudo raspi-config`
@@ -36,14 +36,14 @@ Raspberry Pi (Model B+) with some simple scripts to capture net work logs
   output in a filename with a date and time stamp e.g. speedtest.161205-1530,
   results are stored in ~/results/.
 * *pingtest.sh* - Like the previous shell script, this runs a ping command 
-  against the Google DNS server address (8.8.8.8) for a count of 60 e.g. an 
+  against the Google DNS server address (8.8.8.8) for a count of 60 i.e. an 
   ICMP ping packet every second for 60-seconds. Again, results are stored 
   in a file with the date and time stamp in the name e.g. 
-  pintest.161205-1551. These are also saved to the ~/results/ directory.
+  pingtest.161205-1551. These are also saved to the ~/results/ directory.
 * *collate_speed.py* - collates all the speedtest download and upload results
   into a Comma Separated Value (CSV) format summary - the resulting file can 
   then be easily imported into a spreadsheet for analysis or graphs.
-* *collage_ping.py* - collates ping test results into two CSV files, one for
+* *collate_ping.py* - collates ping test results into two CSV files, one for
   just the packet loss statistics and one for all the other ping stats.
 
 ## Run scripts as a cron job
@@ -68,5 +68,5 @@ Raspberry Pi (Model B+) with some simple scripts to capture net work logs
 ```
    With this configuration, the ping test is run every 10-minutes and the
    speedtest is run after it finishes. The tests only run on a Tuesday 
-   (day 2 in Days Of Week (dow).
+   (day 2 in Days Of Week (dow)), in my setup.
 
